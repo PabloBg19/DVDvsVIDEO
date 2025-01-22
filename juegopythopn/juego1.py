@@ -4,7 +4,7 @@ import random
 pygame.init()
 
 pantalla=pygame.display.set_mode((1980,720), pygame.FULLSCREEN)
-ventana=pygame.Surface((640,780))
+ventana=pygame.Surface((720,1100))
 pygame.display.set_caption("DVD vs VIDEO")
 ball=pygame.image.load("file.png")
 ballrect=ball.get_rect()
@@ -16,11 +16,11 @@ velocidadx=3
 velocidady=3
 speed=[velocidadx, velocidady]
 
-ballrect.move_ip(0, 0)
+ballrect.move_ip(320, 600)
 
 bate=pygame.image.load("paleta.png")
 baterect=bate.get_rect()
-baterect.move_ip(240, 750)
+baterect.move_ip(240, 1050)
 jugando=True
 
 fuente=pygame.font.Font(None, 54)
@@ -38,7 +38,7 @@ while jugando:
             
     if perdido:
         mensaje =fuente.render("HAS PERDIDO, DVD ESCAPO", True, (255,0,0))
-        ventana.blit(mensaje, (180, 200))
+        pantalla.blit(mensaje, (750, 550))
         pygame.display.flip()
         continue
         
@@ -88,9 +88,13 @@ while jugando:
     
     
     
-    if not perdido:    
-        texto_puntaje=fuentep.render(f"PUNTAJE: {puntaje}",True, (0,0,0)) 
-        pantalla.blit(texto_puntaje, (10,10))   
+    if not perdido: 
+        pygame.draw.rect(pantalla, (255, 255, 255), (90, 90, 250, 100), border_radius=10)
+        pygame.draw.rect(pantalla, (0, 0, 0), (90, 90, 250, 100), 4, border_radius=10)
+        texto_puntaje_sombra = fuentep.render(f"PUNTOS: {puntaje}", True, (128, 128, 128))
+        pantalla.blit(texto_puntaje_sombra, (105, 115))
+        texto_puntaje=fuentep.render(f"PUNTOS: {puntaje}",True, (0,0,0)) 
+        pantalla.blit(texto_puntaje, (105,115))   
         pygame.display.flip()
         pygame.time.Clock().tick(60)
 pygame.quit()        
