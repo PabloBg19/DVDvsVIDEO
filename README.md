@@ -13,13 +13,7 @@ Música de Fondo: Se reproduce continuamente durante el juego.
 Requisitos
 Python 3.x: Asegúrate de tener Python instalado en tu sistema.
 Pygame: Instala la librería Pygame usando pip:
-bash
 
-Contraer
-
-Ajuste
-
-Copiar
 pip install pygame
 Recursos: El juego requiere los siguientes archivos en el mismo directorio que el script:
 file.png: Imagen para la pelota que rebota (logo de DVD).
@@ -30,22 +24,10 @@ Cómo Ejecutar
 Clona o descarga este repositorio en tu máquina local.
 Asegúrate de que todos los recursos necesarios (file.png, mp3.png, paleta.png, musicafondo.mp3) estén en el mismo directorio que el script.
 Instala las dependencias:
-bash
 
-Contraer
-
-Ajuste
-
-Copiar
 pip install pygame
 Ejecuta el juego:
-bash
 
-Contraer
-
-Ajuste
-
-Copiar
 python dvd_vs_video.py
 (Reemplaza dvd_vs_video.py con el nombre real de tu archivo de script.)
 Controles
